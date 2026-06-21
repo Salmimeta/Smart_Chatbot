@@ -1,0 +1,9 @@
+Optional Enhancements
+
+	Add a loading spinner while waiting for replies
+
+	Save chat history in local storage
+
+	Add voice input/output (Expo Speech/Voice)
+
+	Replace OpenAI with a local or cheaper model later

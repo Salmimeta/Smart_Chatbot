@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Q/A Bot</title>
+  <style>
+    body { font-family: Arial; margin: 40px; background: #f8f8f8; }
+    #chatbox { width: 400px; padding: 20px; background: white; border-radius: 10px; }
+    .msg { margin: 10px 0; }
+    .user { color: blue; }
+    .bot { color: green; }
+  </style>
+</head>
+<body>
+  <div id="chatbox">
+    <div id="chat"></div>
+    <input type="text" id="input" placeholder="Ask me something..." />
+    <button onclick="send()">Send</button>
+  </div>
+
+  <script>
+    const responses = {
+      "hello": "Hi there! How can I help you?",
+      "how are you": "I'm just a bot, but I'm doing great!",
+      "what is your name": "I'm your Q/A Bot 😊",
+      "bye": "Goodbye! Have a nice day!"
+    };
+
+    function send() {
+      const input = document.getElementById("input");
+      const chat = document.getElementById("chat");
+      const question = input.value.trim().toLowerCase();
+
+      chat.innerHTML += `<div class='msg user'><b>You:</b> ${input.value}</div>`;
+      input.value = "";
+
+      let answer = responses[question] || "Sorry, I don't know the answer to that.";
+      chat.innerHTML += `<div class='msg bot'><b>Bot:</b> ${answer}</div>`;
+    }
+  </script>
+</body>
+</html>
